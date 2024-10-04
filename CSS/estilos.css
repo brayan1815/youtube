@@ -35,6 +35,20 @@ h4{
   margin-left: 20px;
 }
 
+::-webkit-scrollbar{
+  width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+  background-color: #717171;
+}
+
 i{
   font-size: 1.5rem;
 }
@@ -156,6 +170,7 @@ div img:only-child{
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  overflow-y: scroll;
 }
 
 .sidebar-items{
