@@ -36,8 +36,8 @@ h4{
 }
 
 ::-webkit-scrollbar{
-  width: 8px;
-
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb{
@@ -230,10 +230,41 @@ div img:only-child{
   gap: 6px;
 }
 
+.content{
+  grid-area: content;
+  overflow-x: hidden;
+}
 
+.chips-warpper{
+  max-width: calc(100vw - 240px);
+  overflow-x:scroll;
+  background-color: #181818;
+  display: flex;
+  padding-left: 14px;
+  border-top:solid 1px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
 
-/* ------------------------------------------------------------------------------------------ */
-.sidebar{
-  ba
+.chips-warpper::-webkit-scrollbar{
+  height: 6px;
+}
+
+.chips-warpper:hover::-webkit-scrollbar-thumb{
+  background-color: #717171;
+}
+
+.chips{
+  margin: 12px 6px;
+  background-color: #373737 ;
+  padding: 6px 12px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 16px;
+  white-space: nowrap;
+  transition: 0.5s;
+}
+
+.chips:hover{
+  background-color: #d4d4d4;
 }
 
