@@ -62,7 +62,8 @@ h4{
   border-radius: 5px;
 }
 
-.sidebar::-webkit-scrollbar-thumb{
+.sidebar::-webkit-scrollbar-thumb,
+.chipsWarpper:hover::-webkit-scrollbar-thumb{
   background-color: var(--color_scroll);
 }
 
@@ -75,7 +76,7 @@ p,a{
 }
 hr{
   border: solid 1px var(--color_border);
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
 img{
@@ -98,8 +99,7 @@ img{
   color: var(--color__blanco);
   display: flex;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0 10px;
   gap: 4px;
 }
 
@@ -116,39 +116,29 @@ img{
   gap: 25px;
 }
 
-.perfilContainer a{
+.perfilContainer a,
+.perfilContainer div{
   display: flex;
   min-width: 40px;
   height: 40px;
-  color: var(--color__blanco);
-  border: none;
-  font-size: var(--tamaño_iconos);
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   border-radius: 50%;
   transition: 0.5s;
-}
-
-.perfilContainer div{
-  height: 40px;
-  width: 40px;
-  align-items: center;
   position: relative;
 }
 
-.perfilContainer a:hover{
-  background-color:#313131 ;
+.perfilContainer a{
+  color: var(--color__blanco);
+  cursor: pointer;
 }
 
 .perfilContainer img{
   border-radius: 50%;
   position: absolute;
-  cursor: pointer;
 }
 
 .buquedaContainer form{
-  position: relative;
   width: 100%;
   display: flex;
 }
@@ -176,8 +166,6 @@ img{
 }
 
 .buquedaContainer form~button{
-  /* width: 40px;
-  height: 40px; */
   border-radius:50%;
 }
 
@@ -186,30 +174,23 @@ img{
   grid-area: sidebar;
   background-color: var(--color__fondo);
   padding-top: 10px;
-  /* padding-left: 10px;
-  padding-right: 10px; */
   overflow-y: scroll;
 }
 
 .sidebar__items{
   display: flex;
   flex-direction: column;
-  padding: 0 14px 0 14px;
+  padding: 0 14px;
 }
 
 .sidebar__item{
-  /* padding-bottom: 10px; */
   height: 40px;
   display: flex;
   align-items: center;
   border-radius: 8px;
   padding: 0 24px;
   transition:0.5s;
-}
-
-.sidebar__item i{
-  margin-right: 24px;
-
+  gap: 24px;
 }
 
 .sidebar__item:hover{
@@ -219,12 +200,12 @@ img{
 
 .content{
   grid-area: content;
+  overflow-x:hidden ;
 }
 
 .logoContainer__logo{
   display: flex;
   gap: 6px;
-  /* height: 56px; */
   align-items: center;
   position: relative;
 
@@ -232,7 +213,7 @@ img{
 
 .logoContainer__logo img{
   position: relative;
-  height: 25px;
+  height: 25px;                                        
   width: 30px;
 }
 
@@ -245,13 +226,8 @@ img{
 .logoContainer{
   display: flex;
   align-items: center;
-  /* height: 56px; */
+  height: 56px;
   gap: 6px;
-}
-
-.content{
-  grid-area: content;
-  overflow-x: hidden;
 }
 
 .chipsWarpper{
@@ -262,14 +238,6 @@ img{
   padding-left: 14px;
   border-top:solid 1px var(--color_border);
   border-bottom: solid 1px var(--color_border);
-}
-
-.chipsWarpper::-webkit-scrollbar{
-  height: var(--alto_scroll);
-}
-
-.chipsWarpper:hover::-webkit-scrollbar-thumb{
-  background-color: var(--color_scroll);
 }
 
 .chipsWarpper__chip{
@@ -289,26 +257,16 @@ img{
 
 .videosContainer{
   display: grid;
-  /* grid-template-columns: repeat(4,1fr); */
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-  /* grid-template-rows: repeat(auto-fill,minmax(200px,5fr)); */
   grid-template-rows: max-content;
   gap: 18px;
   padding: 20px;
   background-color: var(--color__fondo);
   overflow-y: scroll;
-  height: calc(100vh - 118px);
-}
-
-.videosContainer__cover{
-  position: relative;
-  transition: 0.5s;
+  height: calc(100vh - 117px);
 }
 
 .videosContainer__contenido{
-  margin-bottom: 25px;
-  position: relative;
-  width: 100%;
   padding: 8px;
   border-radius: var(--esquinas_redondeadas_videos);
   transition: 1s;
@@ -385,7 +343,6 @@ img{
 
   .chipsWarpper{
     max-width: calc(100vw - 70px);
-    /* max-width: 100%; */
   }
 
 }
