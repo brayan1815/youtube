@@ -29,7 +29,7 @@
 
 /*LAYOUT*/
 
-body{
+.youtube{
   display: grid;
   grid-template-columns: var(--ancho_sidebar) 1fr;
   grid-template-rows: var(--alto_header) 1fr;
@@ -39,17 +39,27 @@ body{
   height: 100vh;
 }
 
+i{
+  font-size: var(--tamaño_iconos);
+}
+
 a{
   text-decoration: none;
   font-size: var(--tamaño_textos);
   color: var(--color__blanco);
 }
 
-h4{
+p,a{
   font-size: var(--tamaño_textos);
-  text-transform: uppercase;
-  color: var(--color_textos_grisaseos);
-  margin-left: 20px;
+}
+
+img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 ::-webkit-scrollbar{
@@ -67,27 +77,13 @@ h4{
   background-color: var(--color_scroll);
 }
 
-i{
-  font-size: var(--tamaño_iconos);
-}
-
-p,a{
-  font-size: var(--tamaño_textos);
-}
-hr{
+.Sidebar__lineaSeparadora{
   border: solid 1px var(--color_border);
   margin: 12px 0;
 }
 
-img{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
+/* ------------------------------------------HEADER--------------------------------------------------- */
 .header{
   grid-area: header;
   position: fixed;
@@ -103,39 +99,39 @@ img{
   gap: 4px;
 }
 
+/* **********container de logo********** */
+.logoContainer{
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 6px;
+}
+
+.logoContainer__logo{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  position: relative;
+}
+
+.logoContainer__logo img{
+  position: relative;
+  height: 25px;                                        
+  width: 30px;
+}
+
+.logoContainer__titulo {
+  color: var(--color__blanco);
+  letter-spacing: -1px;
+  font-size: var(--tamaño_texto_youtube);
+}
+
+/* **********container de busqueda********** */
 .buquedaContainer{
   display: flex;
   align-items: center;
   gap: 6px;
   flex: 0 1 638px;
-}
-
-.perfilContainer{
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.perfilContainer a,
-.perfilContainer div{
-  display: flex;
-  min-width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: 0.5s;
-  position: relative;
-}
-
-.perfilContainer a{
-  color: var(--color__blanco);
-  cursor: pointer;
-}
-
-.perfilContainer img{
-  border-radius: 50%;
-  position: absolute;
 }
 
 .buquedaContainer form{
@@ -169,7 +165,36 @@ img{
   border-radius:50%;
 }
 
+/* ********** container del perfil ********** */
+.perfilContainer{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
 
+.perfilContainer a,
+.perfilContainer div{
+  display: flex;
+  min-width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.5s;
+  position: relative;
+}
+
+.perfilContainer a{
+  color: var(--color__blanco);
+  cursor: pointer;
+}
+
+.perfilContainer img{
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* -------------------------------------------------SIDEBAR---------------------------------------------------- */
 .sidebar{
   grid-area: sidebar;
   background-color: var(--color__fondo);
@@ -197,39 +222,22 @@ img{
   background-color: #4c4c4c;
 }
 
+.sidebar__texto{
+  font-size: var(--tamaño_textos);
+  text-transform: uppercase;
+  color: var(--color_textos_grisaseos);
+  margin-left: 20px;
+}
+
+
+/* -----------------------------------------------------------------CONTENT--------------------------------------------- */
 
 .content{
   grid-area: content;
   overflow-x:hidden ;
 }
 
-.logoContainer__logo{
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  position: relative;
-
-}
-
-.logoContainer__logo img{
-  position: relative;
-  height: 25px;                                        
-  width: 30px;
-}
-
-.logoContainer__titulo {
-  color: var(--color__blanco);
-  letter-spacing: -1px;
-  font-size: var(--tamaño_texto_youtube);
-}
-
-.logoContainer{
-  display: flex;
-  align-items: center;
-  height: 56px;
-  gap: 6px;
-}
-
+/* **********chips********** */
 .chipsWarpper{
   max-width: calc(100vw -var(--ancho_sidebar));
   overflow-x:scroll;
@@ -255,6 +263,7 @@ img{
   background-color: #d4d4d4;
 }
 
+/* **********Container de video********** */
 .videosContainer{
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
@@ -282,6 +291,8 @@ img{
   height: var(--altura_caja_videos);
   display: block;
 }
+
+/* **********cajas de videos********** */
 
 .videosContainer__caja img{
   object-fit: cover;
@@ -328,7 +339,7 @@ img{
 }
 
 @media(max-width:1200px){
-  body{
+  .youtube{
     grid-template-columns: 70px 1fr;
   }
   .sidebar__items span, .sidebar__items h4{
